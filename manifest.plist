@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://artifactory.digio.es/artifactory/ivoox-dev/ivooxNew_iOS26_v3.ipa</string>
+					<string>https://github.com/carlosDigio/ivoox-ota-distribution/blob/main/ivooxNew_iOS26_v3.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
