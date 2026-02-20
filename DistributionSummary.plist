@@ -1568,7 +1568,7 @@
 						<string>arm64</string>
 					</array>
 					<key>buildNumber</key>
-					<string>31</string>
+					<string>32</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -1588,7 +1588,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>2.3.0</string>
+					<string>2.4.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1862,7 +1862,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.71</string>
+					<string>4.72</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1912,7 +1912,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.71</string>
+					<string>4.72</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1962,7 +1962,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.71</string>
+					<string>4.72</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -2276,7 +2276,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.71</string>
+					<string>4.72</string>
 				</dict>
 			</array>
 			<key>entitlements</key>
@@ -2350,7 +2350,7 @@
 				<string>iVoox Global Podcasting Service SL</string>
 			</dict>
 			<key>versionNumber</key>
-			<string>4.71</string>
+			<string>4.72</string>
 		</dict>
 	</array>
 </dict>

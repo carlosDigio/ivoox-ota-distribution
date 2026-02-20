@@ -6,15 +6,6 @@
 	<string>export</string>
 	<key>iCloudContainerEnvironment</key>
 	<string>Production</string>
-	<key>manifest</key>
-	<dict>
-		<key>appURL</key>
-		<string>https://artifactory.digio.es/artifactory/ivoox-dev/ivooxNew_iOS26_v3.ipa</string>
-		<key>displayImageURL</key>
-		<string>https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/62/83/bb62831f-bfd0-b13f-1585-f45a1a5c7074/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/400x400ia-75.webp</string>
-		<key>fullSizeImageURL</key>
-		<string>https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/62/83/bb62831f-bfd0-b13f-1585-f45a1a5c7074/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/400x400ia-75.webp</string>
-	</dict>
 	<key>method</key>
 	<string>release-testing</string>
 	<key>provisioningProfiles</key>
