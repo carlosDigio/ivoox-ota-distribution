@@ -21,9 +21,12 @@
         .then(res => res.text())
         .then(xmlText => {
           const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-          const keys = xml.querySelectorAll('key');
+          const rootDict = xml.querySelector('plist > dict > array > dict');
+          const keys = rootDict.querySelectorAll(':scope > key');
+
           let versionNumber = "";
           let buildNumber = "";
+
           keys.forEach(key => {
             if (key.textContent === 'versionNumber') {
               versionNumber = key.nextElementSibling.textContent;
@@ -32,7 +35,8 @@
               buildNumber = key.nextElementSibling.textContent;
             }
           });
-          document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber}_${buildNumber}`;
+
+          document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber} (${buildNumber})`;
         });
     </script>
     <script>
