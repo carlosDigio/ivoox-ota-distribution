@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Instalar iVoox</h1>
+    <h1 id="main-title">Instalar iVoox</h1>
+    <script>
+      fetch('./manifest.plist')
+        .then(res => res.text())
+        .then(xmlText => {
+          const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+          const keys = xml.querySelectorAll('dict > key');
+          keys.forEach(key => {
+            if (key.textContent === 'CFBundleShortVersionString') {
+              const version = key.nextElementSibling.textContent;
+              document.getElementById('main-title').textContent = `Instalar iVoox v${version}`;
+            }
+          });
+        })
+        .catch(() => {
+          document.getElementById('main-title').textContent = 'Instalar iVoox';
+        });
+    </script>
     <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist"
       style="
         font-size: 32px;
