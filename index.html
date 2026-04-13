@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/plist@3.1.0/dist/plist.js"></script>
 <html>
   <body>
-    <img id="app-icon" src="" alt="iVoox icon" width="60" height="60"
+    <img id="app-icon" src="" alt="iVoox icon" width="50" height="50"
       style="border-radius: 26px; display: none;" />
     <h1 id="main-title">Instalar iVoox</h1>
     <a id="install-btn"
@@ -23,19 +23,17 @@
         .then(xmlText => {
           const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
           const keys = xml.querySelectorAll('key');
-
+          const versionNumber;
+          const buildNumber;
           keys.forEach(key => {
-            // Versión
-            const versionNumber;
-            const buildNumber;
             if (key.textContent === 'versionNumber') {
               versionNumber = key.nextElementSibling.textContent;
             }
             if (key.textContent === 'buildNumber') {
               buildNumber = key.nextElementSibling.textContent;
             }
-            document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber}_${buildNumber}`;
           });
+          document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber}_${buildNumber}`;
         });
     </script>
     <script>
@@ -46,9 +44,7 @@
           const keys = xml.querySelectorAll('key');
 
           keys.forEach(key => {
-            // Icono: busca el dict que tenga kind = display-image y coge su url
             if (key.textContent === 'kind' && key.nextElementSibling.textContent === 'display-image') {
-              // La url está en el mismo dict, como siguiente par key/value
               const parentDict = key.parentElement;
               const siblingKeys = parentDict.querySelectorAll('key');
               siblingKeys.forEach(k => {
