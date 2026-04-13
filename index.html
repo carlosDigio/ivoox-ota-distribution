@@ -28,7 +28,22 @@
         height: 120px;
         border-radius: 26px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        display: none;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        -webkit-tap-highlight-color: transparent; /* elimina el flash azul en iOS */
+      }
+
+      #app-icon:active {
+        transform: scale(0.93);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      }
+      #app-icon-link {
+        display: inline-block;
+        -webkit-tap-highlight-color: transparent;
+        background: none;
+        border: none;
+        padding: 0;
+        line-height: 0; /* elimina el espacio extra debajo de la imagen */
       }
       #main-title {
         font-size: clamp(1.4rem, 5vw, 2rem);
