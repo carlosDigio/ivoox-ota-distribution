@@ -7,14 +7,13 @@
         .then(res => res.text())
         .then(xmlText => {
           const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-          const keys = xml.querySelectorAll('dict > key');
+          const keys = xml.querySelectorAll('key');
           keys.forEach(key => {
-            if (key.textContent === 'CFBundleShortVersionString') {
+            if (key.textContent === 'bundle-version') {
               const version = key.nextElementSibling.textContent;
-              document.getElementById('main-title').textContent = `Instalar iVoox v${version}`;
+              document.getElementById('main-title').textContent = `Instalar iVoox ${version}`;
             }
-          });
-        })
+        });
         .catch(() => {
           document.getElementById('main-title').textContent = 'Instalar iVoox';
         });
