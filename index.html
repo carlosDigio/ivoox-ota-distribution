@@ -19,7 +19,7 @@
     </a>
 
     <script>
-      fetch('./manifest.plist')
+      fetch('https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist')
         .then(res => res.text())
         .then(xmlText => {
           const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
