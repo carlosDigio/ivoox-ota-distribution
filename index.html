@@ -1,66 +1,115 @@
 <!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/npm/plist@3.1.0/dist/plist.js"></script>
-<html>
-  <body>
-    <img id="app-icon" src="" alt="iVoox icon" width="50" height="50" style="display: inline;" />
-    <h1 id="main-title">Instalar iVoox</h1>
-    <a id="install-btn"
-      href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist"
-      style="
-        font-size: 32px;
-        padding: 16px 32px;
-        display: inline-block;
-        text-decoration: none;
-        background: #007aff;
-        color: white;
-        border-radius: 12px;">
-      Instálame!
-    </a>
-    <script>
-      fetch('https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/DistributionSummary.plist')
-        .then(res => res.text())
-        .then(xmlText => {
-          const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-          const rootDict = xml.querySelector('plist > dict > array > dict');
-          const keys = rootDict.querySelectorAll(':scope > key');
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalar iVoox</title>
+  <script src="https://cdn.jsdelivr.net/npm/plist@3.1.0/dist/plist.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-          let versionNumber = "";
-          let buildNumber = "";
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 32px 16px;
+      background: linear-gradient(145deg, #ff6a00, #ff9a3c);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: white;
+    }
 
-          keys.forEach(key => {
-            if (key.textContent === 'versionNumber') {
-              versionNumber = key.nextElementSibling.textContent;
-            }
-            if (key.textContent === 'buildNumber') {
-              buildNumber = key.nextElementSibling.textContent;
-            }
-          });
+    #app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      display: none;
+    }
 
-          document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber} (${buildNumber})`;
+    #main-title {
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    #install-btn {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      font-weight: 600;
+      padding: 16px 40px;
+      display: inline-block;
+      text-decoration: none;
+      background: white;
+      color: #ff6a00;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    #install-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <img id="app-icon" alt="iVoox icon" />
+  <h1 id="main-title">Instalar iVoox</h1>
+  <a id="install-btn"
+    href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist">
+    Instálame!
+  </a>
+
+  <script>
+    fetch('https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/DistributionSummary.plist')
+      .then(res => res.text())
+      .then(xmlText => {
+        const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const rootDict = xml.querySelector('plist > dict > array > dict');
+        const keys = rootDict.querySelectorAll(':scope > key');
+
+        let versionNumber = "";
+        let buildNumber = "";
+
+        keys.forEach(key => {
+          if (key.textContent === 'versionNumber') versionNumber = key.nextElementSibling.textContent;
+          if (key.textContent === 'buildNumber') buildNumber = key.nextElementSibling.textContent;
         });
-    </script>
-    <script>
-      fetch('https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist')
-        .then(res => res.text())
-        .then(xmlText => {
-          const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-          const keys = xml.querySelectorAll('key');
 
-          keys.forEach(key => {
-            if (key.textContent === 'kind' && key.nextElementSibling.textContent === 'display-image') {
-              const parentDict = key.parentElement;
-              const siblingKeys = parentDict.querySelectorAll('key');
-              siblingKeys.forEach(k => {
-                if (k.textContent === 'url') {
-                  const iconUrl = k.nextElementSibling.textContent;
-                  const img = document.getElementById('app-icon');
-                  img.src = iconUrl;
-                  img.style.display = 'block';
-                }
-              });
-            }
-          });
+        document.getElementById('main-title').textContent = `Instalar iVoox v${versionNumber} (${buildNumber})`;
+        document.getElementById('install-btn').textContent = `Instálame! v${versionNumber}`;
+      });
+  </script>
+
+  <script>
+    fetch('https://raw.githubusercontent.com/carlosDigio/ivoox-ota-distribution/main/manifest.plist')
+      .then(res => res.text())
+      .then(xmlText => {
+        const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const keys = xml.querySelectorAll('key');
+
+        keys.forEach(key => {
+          if (key.textContent === 'kind' && key.nextElementSibling.textContent === 'display-image') {
+            const parentDict = key.parentElement;
+            parentDict.querySelectorAll('key').forEach(k => {
+              if (k.textContent === 'url') {
+                const img = document.getElementById('app-icon');
+                img.src = k.nextElementSibling.textContent;
+                img.style.display = 'block';
+              }
+            });
+          }
         });
-    </script>
-  </body>
+      });
+  </script>
+
+</body>
 </html>
