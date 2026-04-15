@@ -1890,7 +1890,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.75</string>
+					<string>4.76</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1940,7 +1940,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.75</string>
+					<string>4.76</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1990,7 +1990,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.75</string>
+					<string>4.76</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -2304,7 +2304,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.75</string>
+					<string>4.76</string>
 				</dict>
 			</array>
 			<key>entitlements</key>
@@ -2378,7 +2378,7 @@
 				<string>iVoox Global Podcasting Service SL</string>
 			</dict>
 			<key>versionNumber</key>
-			<string>4.75</string>
+			<string>4.76</string>
 		</dict>
 	</array>
 </dict>
