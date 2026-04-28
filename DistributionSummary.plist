@@ -392,6 +392,34 @@
 						<string>arm64</string>
 					</array>
 					<key>buildNumber</key>
+					<string>6.21.1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0336B54C8EE75D6A73481A7B34B1F9C75AAF5D3</string>
+						<key>dateExpires</key>
+						<string>13/02/2027</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>FBAudienceNetwork.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>GXW5YSU35M</string>
+						<key>name</key>
+						<string>iVoox Global Podcasting Service SL</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
 					<string>1</string>
 					<key>certificate</key>
 					<dict>
@@ -1084,7 +1112,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>4.1.6</string>
+					<string>4.2.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
@@ -1700,7 +1728,7 @@
 						<string>iVoox Global Podcasting Service SL</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.31.0</string>
+					<string>1.32.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
